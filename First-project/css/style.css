@@ -1,0 +1,709 @@
+/*
+ * Login: xspirk01
+ *
+ * Doplnte sve reseni.https://www.fit.vutbr.cz/study/courses/ITW/private/cviceni/projekt1/files/1920px.png
+ *
+ * Nezapomente pridat strucne hromadne komentare pro pravidla jednotlivych sekci
+ * a pro netrivialni useky kodu.
+ */
+html, body {padding:0; margin:0; height:100%; width: 100%}
+
+#heisenberg{
+    display: none;
+}
+
+#header{
+    object-fit: cover;
+    object-position: 55%;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-image: url('../img/header.jpg');
+    margin-top: 10px;
+    width: 100%;
+    height: 85%;
+}
+
+/*------Logo------*/
+.logo{
+    background-color: white;
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    font-family: Bebas Neue;
+    border-top: 1px solid #e8e7e7;
+    border-left: 1px solid #e8e7e7;
+    padding-top: 20px;
+}
+
+.logo a{
+    text-decoration: none;
+    color: black;
+    font-size: 32px;
+    margin-left: 40px;
+}
+.logo a:hover{
+    font-size: 0;
+}
+
+.logo a:hover:after{
+    font-size: 32px;
+    content: 'THE CRYSTAL PALACE';
+    color: #cc3636 ;
+    transition: 0.5s;
+}
+
+.logo::first-letter{
+    color: #cc3636 ;
+}
+
+.phone i {
+    margin-right: 0.25rem;
+    color: #cc3636;
+}
+
+.mail i {
+    margin-right: 0.25rem;
+    color: #cc3636;
+}
+
+/*-----Networks-----*/
+header .networks{
+    margin-top: 5px;
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    padding: 10px;
+    justify-self: end;
+}
+
+.networks a{
+    margin-left: 5px;
+    color: #363535;
+}
+
+.networks a:hover{
+    color: #cc3636;
+    transition: color 0.5s;
+}
+
+header .contacts {
+    display: b;
+    font-family: Poppins;
+    font-size: 16px;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 200px;
+    grid-column: 1 / 2;
+}
+
+header .contacts .phone{
+    grid-column: 2;
+}
+
+header .contacts .mail{
+    grid-row: 1;
+    grid-column: 1;
+}
+.mail a{
+    text-decoration: none;
+    color: black;
+}
+
+header nav{
+    background-color: white;
+    height: 80px;
+    width: 100%;
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    border-top: 1px solid #ffd0d0;
+    border-right: 1px solid #ffd0d0;
+}
+
+#header-menu{
+    background-color: white;
+    display: grid;
+    grid-template-columns: 40%  60%;
+    grid-template-rows: auto auto;
+    gap: 2px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1050px;
+}
+
+nav li{
+    float: left;
+}
+
+nav ul{
+    float: right;
+    margin-right: 40px;
+    padding-top: 15px;
+    list-style: none;
+}
+
+nav li a{
+    font-family: Poppins;
+    font-size: 14px;
+    color: #888888;
+    text-decoration: none;
+    padding-bottom: 10px;
+    letter-spacing: 0.05em;
+    margin-left: 20px;
+}
+
+nav li a:hover{
+    color: #363535;
+    border-bottom: 1px solid #363535;
+    font-weight: bold;
+    transition: 0.5s;
+    
+}
+
+nav ul li::last-child{
+    margin-right: 40px;
+}
+
+#tours-button ul{
+    display: none; /*DOROB!!!!!!!!!!!!!*/
+}
+
+#services{
+    width: 100%;
+    background-color: #e8e7e7;
+    padding-top: 60px;
+    padding-bottom: 50px;
+}
+
+.heading span{
+    letter-spacing: 0.4rem;
+    font-family: Bebas Neue;
+    font-size: 16px;
+    color: #cc3636;
+    display: block;
+    text-align: center;
+}
+.heading h2{
+    font-family: Poppins;
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 0;
+    margin-bottom: 0;
+    text-transform: capitalize;
+}
+
+#services .section-content{
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: auto auto;
+}
+
+#services img{
+    height: 300px;
+    object-fit: cover;
+    width: 285px;
+}
+
+#services .section-content {
+     text-align: center;
+ }
+
+#services .section-item{
+    width: auto;
+    min-width: 250px ;
+ }
+
+#services .section-content p{
+    font-family: Poppins;
+    font-size: 16px;
+    text-align: left;
+    line-height: 1.5;
+    color: #363535;
+}
+
+#services .section-content h3{
+    display: inline-flex;
+    font-family: Poppins;
+    color: #363535;
+    letter-spacing: 1px;
+    margin-bottom: 25px;
+}
+
+#services .section-item:hover  p{
+    color: black;
+    transition: 0.5s;
+}
+
+#services .section-item:hover h3{
+    color: black;
+    border-bottom: 1px solid #cc3636;
+    transition: 0.5s;
+}
+
+#services .section-item:hover img{
+     transform: scale(1.05); 
+     transition: 0.5s;
+}
+
+
+
+/*-----------Tours------------*/
+
+/*-----------Tour1------------*/
+#tours .heading{
+    margin-top: 50px;
+}
+
+#tours .section-content{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto auto auto;
+    max-width: 1200px;
+    margin: auto;
+}
+
+#tour1{
+    padding-top: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px dotted #888888;
+}
+
+#tour1 h3{
+    display: inline-flex;
+    color: #363535;
+    font-family: Poppins;
+    letter-spacing: 1px;
+    margin-bottom: 0px;
+    text-align: right;
+}
+
+#tour1 .tour-props{
+    font-family: Poppins;
+    font-size: 1rem;
+    margin-top: 20px;
+    text-align: right;
+}
+.tour-stars:before{
+    font-family: 'FontAwesome';
+    content: '\f005';
+    font-size: 1rem;
+    color:#cc3636; 
+    margin-right: 5px;
+}
+.tour-duration:before{
+    font-family: 'FontAwesome';
+    content: '\f073';
+    font-size: 1rem;
+    color:#cc3636; 
+    margin-right: 5px;
+    border-left: 1px solid black;
+    padding: 4px 0px 4px 5px;
+}
+.tour-price:before{
+    font-family: 'FontAwesome';
+    content: '\f15a';
+    font-size: 1rem;
+    color:#cc3636; 
+    margin-right: 5px;
+    border-left: 1px solid black;
+    padding: 4px 0px 4px 6px;
+}
+
+#tour1 img{
+    float: right;
+    width: 40%;
+    padding:0 0 30px 20px;
+}
+
+#tour1 p{
+    color: #363535;
+    width: 100%;
+    font-size: 1rem;
+    font-family: Poppins;
+    text-align: justify;
+}
+
+/*-----------Tour1------------*/
+
+#tour2{
+    padding-top: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px dotted #888888;
+}
+
+#tour2 h3{
+    display: inline-flex;
+    color: #363535;
+    font-family: Poppins;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    text-align: left;
+
+}
+
+#tour2 .tour-props{
+    font-family: Poppins;
+    font-size: 1rem;
+    margin-top: 20px;
+    text-align: left;
+}
+
+#tour2 img{
+    float: left;
+    width: 40%;
+    padding:0 20px 25px 0;
+}
+
+#tour2 p{
+    color:#363535;
+    margin-top: 20px;
+    width: 100%;
+    font-size: 1rem;
+    font-family: Poppins;
+    text-align: justify;
+}
+
+/*-----------Tour3-------------*/
+
+
+#tour3{
+    padding-top: 40px;
+    padding-bottom: 20px;
+}
+
+#tour3 h3{
+    display: inline-flex;
+    color: #363535;
+    font-family: Poppins;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    text-align: right;
+
+}
+
+#tour3 .tour-props{
+    font-family: Poppins;
+    font-size: 1rem;
+    margin-top: 25px;
+    text-align: right;
+}
+
+#tour3 img{
+    float: right;
+    width: 40%;
+    padding:0 0 20px 20px;
+}
+
+#tour3 p{
+    color: #363535;
+    margin-top: 20px;
+    font-size: 1rem;
+    font-family: Poppins;
+    text-align: justify;
+}
+
+#tour1,#tour3 {
+     text-align: right;
+ }
+
+#tours .section-item:hover  p{
+    color: black;
+    transition: 0.5s;
+}
+
+#tours .section-item:hover h3{
+    color: black;
+    border-bottom: 1px solid #cc3636;
+    transition: 0.5s;
+}
+
+#tours .section-item:hover img{
+    transform: scale(1.05); 
+    transition: 0.5s;
+}
+
+
+
+/*-----------------------------------PRICE-------------------------------*/
+#price{
+    position: relative;
+    max-width: 1200px;
+    margin: auto;
+    height: 600px;
+    margin-bottom: 200px;
+}
+
+#price .section-content:before{
+    content : "";
+    display: block;
+    position: absolute;
+    background-image: url('../img/huel.jpg');
+    opacity: 0.6;
+    width: 100%;
+    height: 100%;
+    transform: scaleX(-1);
+    overflow: hidden;
+    background-position: 65% 20%;
+    background-repeat:no-repeat;
+    box-shadow: inset 0px 0px 29px 48px  white; 
+    z-index: -1;
+}
+
+#price .heading{
+    margin-top: 140px;
+}
+#price .section-item{
+    font-family: Poppins;
+    font-size: 1rem;
+}
+#price .section-item h3{
+    margin-left: 7px;
+}
+#price .section-item ul li {
+    list-style: none;
+}
+#price .section-item ul li:before {
+  content: '';
+  display: inline-block;
+  height: 18px;
+  width: 25px;
+  background-image: url('../img/crystal.svg');
+  color: black;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-left: -35px;
+}
+
+#price .section-content div:nth-child(1){
+    width: 150px;
+    padding: 1px 4px 8px 4px;
+    background-color: white;
+    position: relative;
+    border-radius: 30px;
+    box-shadow: 0px 0px 11px 15px  white; 
+    top: 50px;
+    left:50%; 
+}
+#price .section-content div:nth-child(2){
+    width: 150px;
+    padding: 1px 15px 8px 4px;
+    background-color: white;
+    position: relative;
+    border-radius: 30px;
+    box-shadow: 0px 0px 11px 9px  white; 
+    top: 50px;
+    left:66%;
+    
+}
+#price .section-content div:nth-child(3){
+    width: 250px;
+    padding: 1px 4px 8px 4px;
+    background-color: white;
+    position: relative;
+    box-shadow: 0px 0px 11px 9px  white;
+    border-radius: 30px; 
+    top: 80px;
+    left:73%;
+}
+#price {
+     text-align: left;
+ }
+
+#price h3{
+    margin-bottom: 0;
+    display: inline-flex;
+    text-align: left;
+
+}
+
+/*---------Hover Price----------*/
+
+#price span{
+    visibility: hidden;
+}
+
+#price .section-item:hover span{ 
+    visibility: visible;
+    position: absolute;
+    color: blue;
+    top: 22px;
+    left: 80%;
+}
+
+#price .section-content:hover::before{
+    opacity: 0.4;
+    transition: 0.5s;
+}
+#price .section-item:hover li:before {
+    background-image: url('../img/crystal-blue.svg');
+    transition: 0.5s;
+}
+
+#price .section-item:hover h3{
+    color: black;
+    border-bottom: 1px solid #cc3636;
+    transition: 0.5s;
+}
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*--------Footer-------*/
+
+footer{
+    padding-top: 10px;
+    background-color: #363535;
+    width: 100%;
+    font-family: Poppins;
+    font-size: 10px;
+  
+}
+footer div{
+    margin: 0 auto;
+    width: 1200px;
+    display: grid;
+    grid-template-columns: 30% 20% 50%;
+    column-gap: 11%;
+    color:white;
+}
+
+footer h2{
+    font-family: Bebas Neue;
+    font-size: 16px;
+    letter-spacing: 0.2rem;
+}
+/*---------FollowUs---------*/
+footer .networks i{
+    color: white;
+    padding: 5px;
+    border: 1px solid #cc3636;
+    margin-bottom: 10px;
+}
+footer .networks {
+    display: grid;
+    grid-template-columns: repeat(4, 20px);
+    column-gap: 4px;
+    margin-left: 0;
+}
+footer .networks i:hover{
+    background-color: #cc3636;
+    transition: background 0.5s;
+}
+
+/*---------Contacts---------*/
+footer .contacts{
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-left: 0px;
+  width: 100%;
+}
+footer .contacts i{
+    margin-top: 5px;
+    margin-right: 3px;
+    color: #cc3636;
+}
+footer .contacts a{
+    text-decoration: none;
+    color: white;
+}
+
+footer .contacts a:hover{
+    color: #cc3636;
+    transition: color 0.5s;
+}
+
+/*---------NewsLetter---------*/
+
+input[type=email]{
+    padding: 5px 8px;
+    border: none;
+}
+input[type=submit]{
+    padding: 6px 10px 6px 10px;
+    background-color: #cc3636;
+    margin-left: -3px;
+    text-decoration: none;
+    border: none;
+    color: white;
+    font-size: 11px;
+}
+
+#license{
+    border-top: 1px solid white;
+    content: "";
+    clear: both;
+    display: table;
+    color: white;
+    margin: auto;
+    padding: 20px;
+}
+
+#license a{
+    text-decoration: none;
+    color: white;
+    float: right;
+}
+
+#license a:hover{
+    color: #cc3636;
+    transition: color 0.5s;
+}
+
+footer li{
+    margin-bottom: 7px;
+}
+
+footer li a{
+    text-decoration: none;
+    color: white;
+    margin-bottom: 10px;
+}
+footer ul{
+    list-style: none;
+    margin-left: -40px;
+}
+footer ul li::before{
+    font-family: 'FontAwesome';
+    content: '\f054';
+    font-size: 7px;
+    color:#cc3636 ;
+    margin-right: 5px;
+}
+
+#jesse{
+display: none;
+}
