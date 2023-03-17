@@ -976,21 +976,23 @@ input::-webkit-datetime-edit-year-field:focus{
 
 /*--------Footer-------*/
 
-footer{
+footer {
+    background-color: #363535;
+    color: white;
+    font-family: Poppins;
     padding-top: 10px;
     background-color: #363535;
     width: 100%;
-    font-family: Poppins;
     font-size: 10px;
-  
 }
-footer div{
-    margin: 0 auto;
-    max-width: 1200px;
+
+footer div {
     display: grid;
-    grid-template-columns: 30% 20% 50%;
-    column-gap: 12%;
-    color:white;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    grid-template-columns: minmax(0, 30%) minmax(0, 20%) minmax(0, 50%);
+    column-gap: 200px;
 }
 
 footer h2, h3{
@@ -1002,6 +1004,9 @@ footer h2, h3{
 
 
 /*---------FollowUs---------*/
+#summary{
+    padding-left: 10px;
+}
 #summary h2:first-letter{
     color: #cc3636;
 }
@@ -1023,11 +1028,13 @@ footer h2, h3{
 }
 
 /*---------Contacts---------*/
+#contact{
+    margin-left: 25px;
+}
 #contact .contacts{
   display: grid;
   grid-template-columns: 1fr;
   margin-left: 0px;
-  width: 100%;
 }
 #contact .contacts i{
     margin-top: 5px;
@@ -1061,7 +1068,7 @@ input[type=submit]{
 }
 
 #license{
-    width: 100%;
+    max-width: 1200px;
     font-size: 11px;
     border-top: 1px solid white;
     content: "";
@@ -1069,13 +1076,21 @@ input[type=submit]{
     display: table;
     color: white;
     margin: auto;
-    padding: 20px;
+    padding: 20px 0px 20px 0px;
+}
+
+#license span{
+    padding-left: 10px;
 }
 
 #license a{
     text-decoration: none;
     color: white;
     float: right;
+    padding-right: 10px;
+}
+#links{
+    margin-left: 50px;
 }
 
 #license a:hover{
