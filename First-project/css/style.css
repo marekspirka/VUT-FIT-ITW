@@ -8,19 +8,30 @@
  */
 html, body {padding:0; margin:0; height:100%; width: 100%}
 
+html{
+    scroll-behavior: smooth;
+}
 #heisenberg{
     display: none;
 }
 
-#header{
-    object-fit: cover;
-    object-position: 55%;
+#header::before{
+    content : "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 67%;
+    margin-top: 85px;
+    z-index: -1;
     background-repeat: no-repeat;
     background-size: 100%;
     background-image: url('../img/header.jpg');
-    margin-top: 10px;
-    width: 100%;
-    height: 85%;
+    background-position: 45% 51%;
+    box-shadow: inset 0px 0px 8px 5px  white; 
+}
+#header{
+    height: 100%;
+    min-height: 400px;
 }
 
 /*------Logo------*/
@@ -32,6 +43,7 @@ html, body {padding:0; margin:0; height:100%; width: 100%}
     border-top: 1px solid #e8e7e7;
     border-left: 1px solid #e8e7e7;
     padding-top: 20px;
+    box-shadow:  0px 0px 5px 4px  white; 
 }
 
 .logo a{
@@ -84,6 +96,7 @@ header .networks{
     transition: color 0.5s;
 }
 
+
 header .contacts {
     display: b;
     font-family: Poppins;
@@ -106,6 +119,10 @@ header .contacts .mail{
     text-decoration: none;
     color: black;
 }
+.mail a:hover{
+    color:#cc3636 ;
+    transition: color 0.5s;
+}
 
 header nav{
     background-color: white;
@@ -115,6 +132,7 @@ header nav{
     grid-row: 2 / 3;
     border-top: 1px solid #ffd0d0;
     border-right: 1px solid #ffd0d0;
+    box-shadow:  0px 0px 5px 4px  white; 
 }
 
 #header-menu{
@@ -147,25 +165,165 @@ nav li a{
     text-decoration: none;
     padding-bottom: 10px;
     letter-spacing: 0.05em;
-    margin-left: 20px;
+    padding: 0 10px 5px 10px;
 }
 
 nav li a:hover{
     color: #363535;
-    border-bottom: 1px solid #363535;
+    border-bottom: 1px solid #cc3636;
     font-weight: bold;
     transition: 0.5s;
     
 }
 
 nav ul li::last-child{
+    padding-right: 0;
     margin-right: 40px;
 }
 
-#tours-button ul{
-    display: none; /*DOROB!!!!!!!!!!!!!*/
+.open  ul { 
+    display: block !important ;
 }
 
+#tours-button ul{
+    display: none;
+    background-color: white;
+    width: 75px;
+    margin-left: 10px;
+    margin-top: 10px;
+    padding: 10px 8px 10px 10px;
+    position: absolute;
+    box-shadow:  0px 0px 5px 4px  white; 
+}
+
+#tours-button ul a{
+    margin-top: 10px;
+    margin-left: 8px;
+    display: inline-block;
+    padding: 5px;
+}
+
+#tours-button ul li::before{
+    display: inline-block;
+    font-family: 'FontAwesome';
+    content: '\f054';
+    font-size: 10px;
+    color:#cc3636 ;
+}
+
+#header-form{
+    display: none;
+}
+#header-title{
+    display: none;
+}
+
+
+/*---------------ABOUT----------------*/
+
+#about {
+    margin: 60px 0 80px 0;
+    width: 100%;
+    max-width: 1200px;
+    display: inline-block;
+    background-image: url("/img/meth.svg");
+    background-repeat: no-repeat;
+    background-size: 60%;
+    background-position: 100% 100%;
+    position: relative;
+    height: auto;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#about::before{
+    content: '';
+    background-image: url(../img/meth.svg);
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    background-size: 57%;
+    position: absolute;
+    background-position: 100% 45%;
+    background-repeat:no-repeat;
+    z-index: -1;
+
+}
+#about img {
+    width: 40%;
+    bottom: 0;
+    top: 0;
+    opacity: 0.9;
+    display: block;
+    padding: 20px;
+    border-radius: 50px;
+    position: relative;
+    order: 1;
+    float: left;
+    z-index: 2;
+}
+
+#about .heading span{
+    text-align: left;
+    margin-left: 40px;
+}
+
+#about .heading h2{
+    text-align: left;
+    margin-left: 40px;
+}
+
+#about .heading {
+    width: 60%;
+    background-color: #e8e7e7;
+    position: absolute;
+    margin-top: auto;
+    text-align: left;
+    bottom: 55%;
+    padding-bottom: 20px;
+    padding-left: 40%;
+    padding-top: 2%;
+    border-top: solid 2px #e8e7e7;
+    border-right: solid 2px #e8e7e7;
+    border-left: solid 2px #e8e7e7;
+}
+
+#about p {
+    font-family: Poppins;
+    font-size: 16;
+    width: 57%;
+    padding-top: 10px;
+    padding-left: 43%;
+    padding-bottom: 8%;
+    position: relative;
+    background-color: #e8e7e7;
+    margin: auto;
+    margin-top: 26%;
+    border-bottom: solid 2px #e8e7e7;
+    border-right: solid 2px #e8e7e7;
+    border-left: solid 2px #e8e7e7;
+}
+
+#about:hover img{
+    transform: scale(1.05);
+    opacity: 1;
+     transition: 0.5s;
+}
+#about:hover .heading{
+    background-color: #ffd0d0;
+    border-top: solid 2px #cc3636;
+    border-right: solid 2px #cc3636;
+    border-left: solid 2px #cc3636;
+    transition: 0.5s;
+}
+#about:hover p {
+    background-color: #ffd0d0;
+    border-bottom: solid 2px #cc3636;
+    border-right: solid 2px #cc3636;
+    border-left: solid 2px #cc3636;
+    transition: 0.5s;
+}
+/*-------------SERVICES---------------*/
 #services{
     width: 100%;
     background-color: #e8e7e7;
@@ -250,8 +408,22 @@ nav ul li::last-child{
 
 /*-----------Tours------------*/
 
+#tours::before{
+    content: '';
+    background-image: url(../img/crystal-ship.svg);
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    background-size: 35%;
+    position: absolute;
+    background-position: 2% 0%;
+    background-repeat:no-repeat;
+    z-index: -1;
+
+}
 /*-----------Tour1------------*/
 #tours .heading{
+
     margin-top: 50px;
 }
 
@@ -261,6 +433,7 @@ nav ul li::last-child{
     grid-template-rows: auto auto auto;
     max-width: 1200px;
     margin: auto;
+
 }
 
 #tour1{
@@ -519,7 +692,7 @@ nav ul li::last-child{
 
 /*---------Hover Price----------*/
 
-#price span{
+#price .section-item span{
     visibility: hidden;
 }
 
@@ -548,38 +721,114 @@ nav ul li::last-child{
  
 
 
+ /*------------Clients------------*/
+#clients{
+    max-width: 1200px;
+    min-width: 768px;
+    margin:auto;
+    margin-bottom:100px;
+}
 
+#clients .section-content{
+    margin-top: 20px;
+    display: grid;
+    padding: 40px 0 40px 0;
+    max-width: calc(1200px + (1200px - 768px)/2);
+}
 
+#clients .section-content div:nth-child(1){
 
+}
 
+#clients .section-content div:nth-child(1) img{
+    float: right;
+    margin-right: 20%;
+    width: 200px;
+    height: 200px;
+    border-radius: 50% 30% 52% 25% / 50% 21% 52% 25%  ;
+    box-shadow: 0px 0px 12px 0px #363535;
+}
 
+#clients .section-content div:nth-child(2) img{
+    float: left;
+    margin-left: 20%;
+    width: 200px;
+    height: 200px;
+    border-radius: 30% 50% 25% 52% / 21% 50% 25% 52%   ;
+    box-shadow: 0px 0px 12px 0px #363535;
+}
 
+#clients .section-content div:nth-child(1) blockquote{
+    font-family: Poppins;
+    float: left;
+    background-color: #e8e7e7;
+    display: inline-block;
+    text-align: center;
+    padding: 18px;
+    width: 45%;
+    border-radius: 7% 57% 7% 35% / 41% 33% 37% 35%  ;
+}
 
+#clients .section-content div:nth-child(1) blockquote:after{
+    content : "";
+    display: block;
+    position: absolute;
+    display: inline-block;
+    background-color:  #e8e7e7;
+    margin-top: 25px;
+    margin-left: 220px;
+    height: 30px;
+    width: 75px;
+    border-radius: 7% 57% 7% 35% / 41% 33% 37% 35%;
+ }
 
+#clients .section-content div:nth-child(2) blockquote{
+    font-family: Poppins;
+    margin-top: 50px;
+    float: right;
+    background-color: #e8e7e7;
+    display: inline-block;
+    text-align: center;
+    padding: 18px;
+    width: 45%;
+    border-radius: 57% 7% 35% 7% / 41% 33% 35% 37% ;
+}
 
+#clients .section-content div:nth-child(2) blockquote:before{
+    content : "";
+    display: block;
+    position: absolute;
+    display: inline-block;
+    background-color:  #e8e7e7;
+    margin-top: 25px;
+    margin-left: -260px;
+    height: 30px;
+    width: 75px;
+    border-radius: 57% 7% 35% 7% / 41% 33% 35% 37% ;
+ }
 
+ #clients .section-content .section-item:hover img{
+    box-shadow: 0px 0px 13px 2px #cc3636;
+    color: red;
+    transform: scale(1.05);
+    transition: 0.5s;
+}
 
+#clients .section-content .section-item:hover blockquote{
+    background-color:  #cc3636;
+    color: white;
+    transition: 0.5s;
+}
 
+#clients .section-content .section-item:hover blockquote:before{
+    background-color: #ffd0d0;
+    transition: 0.5s;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#clients .section-content .section-item:hover blockquote::after{
+    background-color: #ffd0d0;
+    transition: 0.5s;
+}
 
 
 /*--------Footer-------*/
@@ -597,15 +846,17 @@ footer div{
     width: 1200px;
     display: grid;
     grid-template-columns: 30% 20% 50%;
-    column-gap: 11%;
+    column-gap: 12%;
     color:white;
 }
 
-footer h2{
+footer h2, h3{
     font-family: Bebas Neue;
     font-size: 16px;
     letter-spacing: 0.2rem;
 }
+
+
 /*---------FollowUs---------*/
 footer .networks i{
     color: white;
@@ -705,5 +956,19 @@ footer ul li::before{
 }
 
 #jesse{
-display: none;
+    display: none;
+    transition: 0.5s;
+    position: fixed; 
+    bottom: 10px; 
+    right: 20px;
+    color: #cc3636;
+    padding: 15px 20px;
+    border: 1px solid #cc3636;
+}
+.scrolled #jesse{
+   display: block;
+}
+#jesse:hover{
+    background-color:  #cc3636;
+    color: white;
 }
