@@ -6,14 +6,14 @@
  * Nezapomente pridat strucne hromadne komentare pro pravidla jednotlivych sekci
  * a pro netrivialni useky kodu.
  */
+
 html, body {padding:0; margin:0; height:100%; width: 100%}
 
 html{
     scroll-behavior: smooth;
 }
 
-
-
+/*---------Pop up Heisenberg---------*/
 #heisenberg{
     display: none;
     position: fixed;
@@ -33,14 +33,15 @@ html{
     animation-direction: alternate;
     animation: goup 0.5s;
 }
-
+/*
+* Vytvorena animacia na prechod pop-up heisenberg, pop-up sa
+* objavi a posunie sa smerom nahor na finálnu poziciu
+*/
 @keyframes goup {
   0% {left: 42%px; top: 80px; display: none; opacity: 0;}
   1% {display: block !important;opacity: 0;}
   100% {left: 42%px; top: 40px;display: block  !important;opacity: 0.9;}
 }
-
-
 
 #heisenberg img{
     padding: 10px;
@@ -66,6 +67,7 @@ html{
     width: 200px;
 }
 
+/*---------Header---------*/
 #header::before{
     content : "";
     display: block;
@@ -80,100 +82,10 @@ html{
     background-position: 45% 51%;
     box-shadow: inset 0px 0px 8px 5px  white; 
 }
+
 #header{
     height: 80%;
     min-height: 400px;
-}
-
-
-/*------Logo------*/
-.logo{
-    background-color: white;
-    grid-column: 1 / 2;
-    grid-row: 2 / 3;
-    font-family: Bebas Neue;
-    border-top: 1px solid #e8e7e7;
-    border-left: 1px solid #e8e7e7;
-    padding-top: 20px;
-    box-shadow:  0px 0px 5px 4px  white; 
-}
-
-.logo a{
-    text-decoration: none;
-    color: black;
-    font-size: 32px;
-    margin-left: 40px;
-}
-.logo a:hover{
-    font-size: 0;
-}
-
-.logo a:hover:after{
-    font-size: 32px;
-    content: 'THE CRYSTAL PALACE';
-    color: #cc3636 ;
-    transition: 0.5s;
-}
-
-.logo::first-letter{
-    color: #cc3636 ;
-}
-
-.phone i {
-    margin-right: 0.25rem;
-    color: #cc3636;
-}
-
-.mail i {
-    margin-right: 0.25rem;
-    color: #cc3636;
-}
-
-/*-----Networks-----*/
-header .networks{
-    margin-top: 5px;
-    grid-column: 2 / 3;
-    grid-row: 1 / 2;
-    padding: 10px;
-    justify-self: end;
-}
-
-.networks a{
-    margin-left: 5px;
-    color: #363535;
-}
-
-.networks a:hover{
-    color: #cc3636;
-    transition: color 0.5s;
-}
-
-
-header .contacts {
-    display: b;
-    font-family: Poppins;
-    font-size: 16px;
-    padding: 10px;
-    display: grid;
-    grid-template-columns: 200px;
-    grid-column: 1 / 2;
-}
-
-header .contacts .phone{
-    grid-column: 2;
-}
-
-header .contacts .mail{
-    grid-row: 1;
-    grid-column: 1;
-}
-.mail a{
-    text-decoration: none;
-    color: black;
-}
-.mail a:hover{
-    color:#cc3636 ;
-    transition: color 0.5s;
 }
 
 header nav{
@@ -331,6 +243,10 @@ nav ul li::last-child{
     border: solid 2px #7564d4;
 }
 
+/*
+* V header-form pri focuse na zmenu casu a datumu sa zmeni farba na fialovu,
+* taktiez sa zmeni farba pozadania pri stalceni na datum 
+*/
 input::-webkit-datetime-edit-day-field:focus{
     background-color: #7564d4;
 }
@@ -341,6 +257,9 @@ input::-webkit-datetime-edit-year-field:focus{
     background-color: #7564d4;
 }
 
+/*
+* Ak je header-form vypleni validnymi informaciami, button submit bude modry
+*/
 #header-form form:valid input[type=submit] , #contact form:valid input[type=submit] {
   background-color: blue;
 }
@@ -349,10 +268,12 @@ input::-webkit-datetime-edit-year-field:focus{
     outline: none;
 }
 
+/*
+* Po stlaceni sa button da na sivu farbu a neda sa stlacit
+*/
 #header-form form input[type=submit]:disabled, #contact form input[type=submit]:disabled{
     background-color: gray;
-    border: none;
-    
+    border: none;   
 }
 
 #header-form form input[type=submit] {
@@ -361,6 +282,97 @@ input::-webkit-datetime-edit-year-field:focus{
     color: white;
 }
 
+/*------Logo------*/
+.logo{
+    background-color: white;
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    font-family: Bebas Neue;
+    border-top: 1px solid #e8e7e7;
+    border-left: 1px solid #e8e7e7;
+    padding-top: 20px;
+    box-shadow:  0px 0px 5px 4px  white; 
+}
+
+.logo a{
+    text-decoration: none;
+    color: black;
+    font-size: 32px;
+    margin-left: 40px;
+}
+.logo a:hover{
+    font-size: 0;
+}
+
+.logo a:hover:after{
+    font-size: 32px;
+    content: 'THE CRYSTAL PALACE';
+    color: #cc3636 ;
+    transition: 0.5s;
+}
+
+.logo::first-letter{
+    color: #cc3636 ;
+}
+
+/*------Phone------*/
+.phone i {
+    margin-right: 0.25rem;
+    color: #cc3636;
+}
+
+/*------Mail------*/
+.mail i {
+    margin-right: 0.25rem;
+    color: #cc3636;
+}
+
+/*-----Networks-----*/
+header .networks{
+    margin-top: 5px;
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    padding: 10px;
+    justify-self: end;
+}
+
+.networks a{
+    margin-left: 5px;
+    color: #363535;
+}
+
+.networks a:hover{
+    color: #cc3636;
+    transition: color 0.5s;
+}
+
+/*-----Contacts-----*/
+header .contacts {
+    display: block;
+    font-family: Poppins;
+    font-size: 16px;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 200px;
+    grid-column: 1 / 2;
+}
+
+header .contacts .phone{
+    grid-column: 2;
+}
+
+header .contacts .mail{
+    grid-row: 1;
+    grid-column: 1;
+}
+.mail a{
+    text-decoration: none;
+    color: black;
+}
+.mail a:hover{
+    color:#cc3636 ;
+    transition: color 0.5s;
+}
 
 /*---------------ABOUT----------------*/
 
@@ -390,8 +402,8 @@ input::-webkit-datetime-edit-year-field:focus{
     background-position: 100% 45%;
     background-repeat:no-repeat;
     z-index: -1;
-
 }
+
 #about img {
     width: 40%; 
     bottom: 0;
@@ -450,7 +462,7 @@ input::-webkit-datetime-edit-year-field:focus{
 #about:hover img{
     transform: scale(1.05);
     opacity: 1;
-     transition: 0.5s;
+    transition: 0.5s;
 }
 #about:hover .heading{
     background-color: #ffd0d0;
@@ -466,6 +478,7 @@ input::-webkit-datetime-edit-year-field:focus{
     border-left: solid 2px #cc3636;
     transition: 0.5s;
 }
+
 /*-------------SERVICES---------------*/
 #services{
     width: 100%;
@@ -508,12 +521,12 @@ input::-webkit-datetime-edit-year-field:focus{
 
 #services .section-content {
      text-align: center;
- }
+}
 
 #services .section-item{
     width: auto;
     min-width: 250px ;
- }
+}
 
 #services .section-content p{
     font-family: Poppins;
@@ -543,11 +556,9 @@ input::-webkit-datetime-edit-year-field:focus{
 }
 
 #services .section-item:hover img{
-     transform: scale(1.05); 
-     transition: 0.5s;
+    transform: scale(1.05); 
+    transition: 0.5s;
 }
-
-
 
 /*-----------Tours------------*/
 
@@ -562,11 +573,10 @@ input::-webkit-datetime-edit-year-field:focus{
     background-position: 2% 0%;
     background-repeat:no-repeat;
     z-index: -1;
-
 }
+
 /*-----------Tour1------------*/
 #tours .heading{
-
     margin-top: 50px;
 }
 
@@ -576,7 +586,6 @@ input::-webkit-datetime-edit-year-field:focus{
     grid-template-rows: auto auto auto;
     max-width: 1200px;
     margin: auto;
-
 }
 
 #tour1{
@@ -640,7 +649,7 @@ input::-webkit-datetime-edit-year-field:focus{
     text-align: justify;
 }
 
-/*-----------Tour1------------*/
+/*-----------Tour2------------*/
 
 #tour2{
     padding-top: 40px;
@@ -655,7 +664,6 @@ input::-webkit-datetime-edit-year-field:focus{
     letter-spacing: 1px;
     margin-bottom: 10px;
     text-align: left;
-
 }
 
 #tour2 .tour-props{
@@ -681,8 +689,6 @@ input::-webkit-datetime-edit-year-field:focus{
 }
 
 /*-----------Tour3-------------*/
-
-
 #tour3{
     padding-top: 40px;
     padding-bottom: 20px;
@@ -695,7 +701,6 @@ input::-webkit-datetime-edit-year-field:focus{
     letter-spacing: 1px;
     margin-bottom: 10px;
     text-align: right;
-
 }
 
 #tour3 .tour-props{
@@ -721,7 +726,7 @@ input::-webkit-datetime-edit-year-field:focus{
 
 #tour1,#tour3 {
      text-align: right;
- }
+}
 
 #tours .section-item:hover  p{
     color: black;
@@ -739,9 +744,7 @@ input::-webkit-datetime-edit-year-field:focus{
     transition: 0.5s;
 }
 
-
-
-/*-----------------------------------PRICE-------------------------------*/
+/*------------PRICE-------------*/
 #price{
     position: relative;
     max-width: 1200px;
@@ -779,6 +782,7 @@ input::-webkit-datetime-edit-year-field:focus{
 #price .section-item ul li {
     list-style: none;
 }
+
 #price .section-item ul li:before {
   content: '';
   display: inline-block;
@@ -801,6 +805,7 @@ input::-webkit-datetime-edit-year-field:focus{
     top: 50px;
     left:50%; 
 }
+
 #price .section-content div:nth-child(2){
     width: 150px;
     padding: 1px 15px 8px 4px;
@@ -812,6 +817,7 @@ input::-webkit-datetime-edit-year-field:focus{
     left:66%;
     
 }
+
 #price .section-content div:nth-child(3){
     width: 250px;
     padding: 1px 4px 8px 4px;
@@ -822,19 +828,18 @@ input::-webkit-datetime-edit-year-field:focus{
     top: 80px;
     left:73%;
 }
-#price {
+
+#price{
      text-align: left;
- }
+}
 
 #price h3{
     margin-bottom: 0;
     display: inline-flex;
     text-align: left;
-
 }
 
-/*---------Hover Price----------*/
-
+/*-----------Hover Price------------*/
 #price .section-item span{
     visibility: hidden;
 }
@@ -851,6 +856,7 @@ input::-webkit-datetime-edit-year-field:focus{
     opacity: 0.4;
     transition: 0.5s;
 }
+
 #price .section-item:hover li:before {
     background-image: url('../img/crystal-blue.svg');
     transition: 0.5s;
@@ -861,10 +867,8 @@ input::-webkit-datetime-edit-year-field:focus{
     border-bottom: 1px solid #cc3636;
     transition: 0.5s;
 }
- 
 
-
- /*------------Clients------------*/
+/*--------------Clients--------------*/
 #clients{
     max-width: 1200px;
     min-width: 768px;
@@ -923,7 +927,7 @@ input::-webkit-datetime-edit-year-field:focus{
     height: 30px;
     width: 75px;
     border-radius: 7% 57% 7% 35% / 41% 33% 37% 35%;
- }
+}
 
 #clients .section-content div:nth-child(2) blockquote{
     font-family: Poppins;
@@ -973,9 +977,7 @@ input::-webkit-datetime-edit-year-field:focus{
     transition: 0.5s;
 }
 
-
-/*--------Footer-------*/
-
+/*----------Footer---------*/
 footer {
     background-color: #363535;
     color: white;
@@ -1002,26 +1004,29 @@ footer h2, h3{
     letter-spacing: 0.2rem;
 }
 
-
 /*---------FollowUs---------*/
 #summary{
     padding-left: 10px;
 }
+
 #summary h2:first-letter{
     color: #cc3636;
 }
+
 #summary .networks i{
     color: white;
     padding: 5px;
     border: 1px solid #cc3636;
     margin-bottom: 10px;
 }
+
 #summary .networks {
     display: grid;
     grid-template-columns: repeat(4, 20px);
     column-gap: 4px;
     margin-left: -5px;
 }
+
 #summary .networks i:hover{
     background-color: #cc3636;
     transition: background 0.5s;
@@ -1031,16 +1036,19 @@ footer h2, h3{
 #contact{
     margin-left: 25px;
 }
+
 #contact .contacts{
   display: grid;
   grid-template-columns: 1fr;
   margin-left: 0px;
 }
+
 #contact .contacts i{
     margin-top: 5px;
     margin-right: 3px;
     color: #cc3636;
 }
+
 #contact .contacts a{
     text-decoration: none;
     color: white;
@@ -1052,11 +1060,11 @@ footer h2, h3{
 }
 
 /*---------NewsLetter---------*/
-
 input[type=email]{
     padding: 5px 8px;
     border: none;
 }
+
 input[type=submit]{
     padding: 6px 10px 6px 10px;
     background-color: #cc3636;
@@ -1107,10 +1115,12 @@ input[type=submit]{
     color: white;
     margin-bottom: 10px;
 }
+
 #links ul{
     list-style: none;
     margin-left: -40px;
 }
+
 #links ul li::before{
     font-family: 'FontAwesome';
     content: '\f054';
@@ -1118,6 +1128,8 @@ input[type=submit]{
     color:#cc3636 ;
     margin-right: 5px;
 }
+
+/*---------Jesse---------*/
 #jesse{
     display: none;
     transition: 0.5s;
@@ -1128,9 +1140,11 @@ input[type=submit]{
     padding: 15px 20px;
     border: 1px solid #cc3636;
 }
+
 .scrolled #jesse{
    display: block;
 }
+
 #jesse:hover{
     background-color:  #cc3636;
     color: white;
